@@ -1,0 +1,101 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "sku": {
+          "type": "sku",
+          "settings": {
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "sku",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "large"
+      }
+    },
+    "tier_pricing": {
+      "type": "b2b-tier-pricing",
+      "blocks": {
+        "tier_1": {
+          "type": "tier",
+          "settings": { "min_quantity": 10, "discount_percent": 5, "label": "Tier 1" }
+        },
+        "tier_2": {
+          "type": "tier",
+          "settings": { "min_quantity": 25, "discount_percent": 10, "label": "Tier 2" }
+        },
+        "tier_3": {
+          "type": "tier",
+          "settings": { "min_quantity": 50, "discount_percent": 18, "label": "Tier 3" }
+        },
+        "tier_4": {
+          "type": "tier",
+          "settings": { "min_quantity": 100, "discount_percent": 25, "label": "Tier 4" }
+        }
+      },
+      "block_order": ["tier_1", "tier_2", "tier_3", "tier_4"],
+      "settings": {
+        "heading": "Volume pricing",
+        "access": "b2b",
+        "show_savings": true,
+        "show_company": true
+      }
+    },
+    "recommendations": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Often ordered together",
+        "products_to_show": 4,
+        "columns_desktop": 4
+      }
+    }
+  },
+  "order": ["main", "tier_pricing", "recommendations"]
+}
